@@ -14,6 +14,8 @@
 
 .card{
     border-radius: 16px !important;
+    background: rgba(255,255,255,0.5) !important;
+    backdrop-filter: blur(5px);
 }
 .card-header-t{
     text-align: center !important;
