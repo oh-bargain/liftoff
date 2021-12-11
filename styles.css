@@ -1,9 +1,62 @@
+.container-box{
+    padding: 10px 60px;
+}
+
 .purple-text{
     height: 90px;
     /* display: block; */
     padding: 9px 15px;
     border: 1.8px solid black;
     margin: 10px;
-    position: absolute;
+    /* position: ; */
     background-color: white;
+}
+
+.card{
+    border-radius: 16px !important;
+}
+.card-header-t{
+    text-align: center !important;
+}
+
+#scroll-container{
+    /* width: 1000px; */
+    /* overflow: auto; */
+    width: max-content;
+}
+  
+#scroll-text {
+/* animation properties */
+-moz-transform: translateX(100%);
+-webkit-transform: translateX(100%);
+transform: translateX(100%);
+
+-moz-animation: my-animation 15s linear infinite;
+-webkit-animation: my-animation 15s linear infinite;
+animation: my-animation 15s linear infinite;
+}
+
+/* for Firefox */
+@-moz-keyframes my-animation {
+from { -moz-transform: translateX(100%); }
+to { -moz-transform: translateX(-100%); }
+}
+
+/* for Chrome */
+@-webkit-keyframes my-animation {
+from { -webkit-transform: translateX(100%); }
+to { -webkit-transform: translateX(-100%); }
+}
+
+@keyframes my-animation {
+from {
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+}
+to {
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+} 
 }

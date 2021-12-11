@@ -23,63 +23,111 @@
     <title>LIFT OFF DESIGN SEMINAR 2022</title>
 </head>
 <body>
-
-    <div class="container-box" style="padding: 10px">
-        <h3>Welcome to the Lift-Off !</h3>
-
-        <div class="canvas-container parent" style="position: relative;">
-
-          <!-- 919px 에서 맞춤 -->
-          <img src="src/2x/Asset 5@2x.png" alt="LIFT-OFF" class="purple-text" style="left: 30px; top: 40px">
-          <img src="src/2x/Asset 6@2x.png" alt="DESIGN" class="purple-text" style="left: 250px; top: 170px">
-          <img src="src/2x/Asset 8@2x.png" alt="SEMINAR" class="purple-text" style="left: 110px; bottom: 55px">
-          <img src="src/2x/Asset 7@2x.png" alt="2022" class="purple-text"style="right: 60px; bottom: 55px">
-  
-
-
         <!-- Template Three js from this pen https://codepen.io/Mamboleoo/pen/zyjYGV -->
-            <canvas id="canvas" style="margin-left: auto; width: 100%; height: 100% "></canvas>
-            <script id="vertex-shader" type="x-shader/x-vertex">
-                varying vec2 vUv;
-              
-                void main() {
-                  vUv = uv;
-                  gl_Position = vec4(position, 1.0);
-                }
-              </script>
-              <script id="fragment-shader" type="x-shader/x-fragment">
-                
-                float rand(vec2 n) { 
-                  return fract(sin(dot(n, vec2(12.9898, 4.1414))) * 43758.5453);
-              }
-              
-              float noise(vec2 p){
-                  vec2 ip = floor(p);
-                  vec2 u = fract(p);
-                  u = u*u*(3.0-2.0*u);
-                  
-                  float res = mix(
-                      mix(rand(ip),rand(ip+vec2(1.0,0.0)),u.x),
-                      mix(rand(ip+vec2(0.0,1.0)),rand(ip+vec2(1.0,1.0)),u.x),u.y);
-                  return res*res;
-              }
-                
-                varying vec2 vUv;
-                uniform sampler2D image;
-                uniform float time;
-                void main() {
-                  vec2 uv = vUv - 0.1*noise(vUv+time);
-                  vec4 texturePixel = texture2D(image, vec2(clamp(uv.x,0.,1.),clamp(uv.y,0.,1.)) );
-                  gl_FragColor = texturePixel;
-                }
-              </script>
-        </div>  <!-- canvas-container -->
+          <canvas id="canvas" class="background-canvas" style="margin-left: auto; width: 100%; height: 100%; position: fixed; top:0; z-index:-1;"></canvas>
 
+          <div id="scroll-container">
+            <div id="scroll-text" style="margin-top: 10px;">
+              모든 참여자는 백신 접종 확인서와 48시간 이내의 COVID-19 PCR 검사 확인서를 제출해야합니다. COVID-19 관련 거리두기 정책에 따라 계획이 일부 수정될 수 있습니다. </div>
+          </div>
+
+          <div class="body-cont" style="position: absolute; z-index: 0;">
+          
+
+          <div class="container-box" >
+          
+
+            <div style="width: 100%; height: 400px;">
+            <div class="purple-container parent" style="position: relative; margin-top: 100px;">
+
+              <!-- 919px 에서 맞춤 -->
+              <img src="src/2x/Asset 5@2x.png" alt="LIFT-OFF" class="purple-text" >
+              <img src="src/2x/Asset 6@2x.png" alt="DESIGN" class="purple-text" >
+              <img src="src/2x/Asset 8@2x.png" alt="SEMINAR" class="purple-text" >
+              <img src="src/2x/Asset 7@2x.png" alt="2022" class="purple-text">
+      
+            </div>
+            </div>
+          
+            <div class="card" style="margin: 20px; padding: 20px;">
+              <div class="card-body">
+                <div class="card-header-t">
+                <h5 class="card-title">Card title</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                </div>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt </p>
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+              </div>
+            </div>
+
+            <div class="card" style="margin: 20px; padding: 20px;">
+              <div class="card-body">
+                <div class="card-header-t">
+                <h5 class="card-title">Card title</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                </div>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt </p>
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+              </div>
+            </div>
+
+            <div class="card" style="margin: 20px; padding: 20px;">
+              <div class="card-body">
+                <div class="card-header-t">
+                <h5 class="card-title">Card title</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                </div>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt </p>
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+              </div>
+            </div>
+         
+         </div>
         </div>
-      </div>
-   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!
-   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, perspiciatis nesciunt aliquam eveniet sunt rem quae a iure laboriosam suscipit incidunt aspernatur vel neque qui molestias nulla quo, tempora quod!
-<!-- <script type="text/javascript" src="./src/animation.js"></script> -->
+
+         <script id="vertex-shader" type="x-shader/x-vertex">
+          varying vec2 vUv;
+        
+          void main() {
+            vUv = uv;
+            gl_Position = vec4(position, 1.0);
+          }
+        </script>
+        <script id="fragment-shader" type="x-shader/x-fragment">
+          
+          float rand(vec2 n) { 
+            return fract(sin(dot(n, vec2(12.9898, 4.1414))) * 43758.5453);
+        }
+        
+        float noise(vec2 p){
+            vec2 ip = floor(p);
+            vec2 u = fract(p);
+            u = u*u*(3.0-2.0*u);
+            
+            float res = mix(
+                mix(rand(ip),rand(ip+vec2(1.0,0.0)),u.x),
+                mix(rand(ip+vec2(0.0,1.0)),rand(ip+vec2(1.0,1.0)),u.x),u.y);
+            return res*res;
+        }
+          
+          varying vec2 vUv;
+          uniform sampler2D image;
+          uniform float time;
+          void main() {
+            vec2 uv = vUv - 0.1*noise(vUv+time);
+            vec4 texturePixel = texture2D(image, vec2(clamp(uv.x,0.,1.),clamp(uv.y,0.,1.)) );
+            gl_FragColor = texturePixel;
+          }
+        </script>
+       
+      <!-- </div> -->
+
+     
+
+   <!-- <script type="text/javascript" src="./src/animation.js"></script> -->
 <!-- partial -->
 <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/100/three.min.js'></script><script  src="./script.js"></script>
 </body>
