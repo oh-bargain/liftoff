@@ -15,10 +15,7 @@ onResize();
 window.addEventListener('resize', onResize);
 
 const imgTexture = new THREE.TextureLoader().load(
-  // 'https://github.com/oh-bargain/liftoff/blob/main/src/Artboard-1.png?raw=true'
-  // './Artboard-1.jpg',
-  "https://raw.githubusercontent.com/oh-bargain/liftoff/main/src/Artboard-1.png"
-  // 'https://source.unsplash.com/random/600x300'
+  "https://raw.githubusercontent.com/oh-bargain/liftoff/main/src/2x/Asset%2010%402x.png"
   );
 
 var shaderMaterial = new THREE.ShaderMaterial({
