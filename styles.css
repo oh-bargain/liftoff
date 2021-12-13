@@ -12,53 +12,49 @@
     background-color: white;
 }
 
+.pcont-box{
+    height: 400px;
+}
+
 .card{
     border-radius: 16px !important;
     background: rgba(255,255,255,0.5) !important;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px) !important;
 }
+
+
 .card-header-t{
     text-align: center !important;
 }
 
+
 #scroll-container{
-    /* width: 1000px; */
-    /* overflow: auto; */
-    width: max-content;
-}
-  
-#scroll-text {
-/* animation properties */
--moz-transform: translateX(100%);
--webkit-transform: translateX(100%);
-transform: translateX(100%);
-
--moz-animation: my-animation 15s linear infinite;
--webkit-animation: my-animation 15s linear infinite;
-animation: my-animation 15s linear infinite;
+    color: gray;
+    font-size: small;
+    /* width: 1000px;
+    overflow: auto;
+    width: max-content; */
 }
 
-/* for Firefox */
-@-moz-keyframes my-animation {
-from { -moz-transform: translateX(100%); }
-to { -moz-transform: translateX(-100%); }
+@media screen and (max-width: 599px) {
+    .purple-text{
+        height: 55px !important;
+        padding: 5px 10px;
+        border: 1px solid black;
+        margin: 6px;
+    }
+    .container-box{
+        padding: 10px 30px !important;
+    }
+    .pcont-box{
+        height: 300px !important;
+        padding: 0 30px !important;
+    }
 }
 
-/* for Chrome */
-@-webkit-keyframes my-animation {
-from { -webkit-transform: translateX(100%); }
-to { -webkit-transform: translateX(-100%); }
+@media screen and (min-width: 600px) and (max-width: 821px) {
+    .pcont-box{
+        margin-bottom: 100px;
+    }
 }
-
-@keyframes my-animation {
-from {
-    -moz-transform: translateX(100%);
-    -webkit-transform: translateX(100%);
-    transform: translateX(100%);
-}
-to {
-    -moz-transform: translateX(-100%);
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%);
-} 
-}
+/* 600 - 821 */
